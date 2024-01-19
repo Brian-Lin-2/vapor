@@ -22,7 +22,7 @@ export default {
         "light-brown": "#a19755",
       },
       fontFamily: {
-        roboto: ["Roboto", sans - serif],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
   },
