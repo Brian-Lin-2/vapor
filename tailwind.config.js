@@ -5,21 +5,24 @@ export default {
     extend: {
       colors: {
         // Text:
-        white: "#f5f5f5",
-        "light-gray": "#818b97",
+        white: "rgb(245, 245, 245)",
+        "light-gray": "rgb(129, 139, 151)",
+
         // Background:
-        "dark-navy-blue": "#0c141e",
-        "dark-gray": "#22282f",
-        gray: "#363f4d",
-        "dark-turquoise": "#153b54",
-        "navy-blue": "#26304e",
+        "dark-navy-blue": "rgb(12, 20, 30)",
+        "dark-gray": "rgb(34, 40, 47)",
+        gray: "rgb(54, 63, 77)",
+        "dark-turquoise": "rgb(21, 59, 84)",
+        "navy-blue": "rgb(38, 48, 78)",
+
         // Secondary:
-        "light-blue": "#71c8f7",
-        "light-navy-blue": "#556da5",
+        "light-blue": "rgb(113, 199, 247)",
+        "light-navy-blue": "rgb(85, 109, 165)",
+
         // Accents:
-        "light-green": "#8cab40",
-        "light-red": "#aa4a3e",
-        "light-brown": "#a19755",
+        "light-green": "rgb(140, 171, 64)",
+        "light-red": "rgb(170, 74, 62)",
+        "light-brown": "rgb(161, 151, 85)",
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],

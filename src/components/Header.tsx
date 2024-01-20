@@ -1,13 +1,21 @@
 import { Link } from "react-router-dom";
+import SideMenu from "./SideMenu";
 
 export default function Header() {
   return (
-    <div>
-      <h1>Vapor</h1>
+    <div className="flex justify-between p-3 items-center">
+      <Link to="">
+        <img className="w-20" src="/images/icons/logo.png"></img>
+      </Link>
 
-      <Link to="">Home</Link>
-      <Link to="products">Products</Link>
-      <Link to="checkout">Cart</Link>
+      <nav className="flex gap-4">
+        {/* <Link to="">Home</Link>
+        <Link to="products">Products</Link> */}
+        <Link to="checkout">
+          <img className="w-8" src="/images/icons/cart.png"></img>
+        </Link>
+        <SideMenu />
+      </nav>
     </div>
   );
 }
