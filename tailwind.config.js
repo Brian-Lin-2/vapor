@@ -5,8 +5,10 @@ export default {
     extend: {
       colors: {
         // Text:
-        white: "rgb(245, 245, 245)",
+        white: "rgb(255, 255, 255)",
         "light-gray": "rgb(129, 139, 151)",
+        "gray-2": "rgb(91, 90, 85)",
+        "gray-3": "rgb(32, 32, 32)",
 
         // Background:
         "dark-navy-blue": "rgb(12, 20, 30)",
