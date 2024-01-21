@@ -6,24 +6,31 @@ export default function SideMenu() {
 
   return (
     <>
-      <a className="cursor-pointer" onClick={() => setActive(true)}>
-        <img className="w-8" src="./images/icons/menu.png" alt="" />
-      </a>
+      <button
+        className="cursor-pointer"
+        onClick={() => setActive(true)}
+        data-testid="menu-icon"
+      >
+        <img className="w-8" src="./images/icons/menu.png" alt="menu" />
+      </button>
 
       {active && (
-        <div className="absolute h-screen w-[375px] left-0 top-0 flex">
-          <a
+        <div
+          className="absolute h-screen w-[375px] left-0 top-0 flex"
+          data-testid="side-menu"
+        >
+          <div
             className="w-2/5 bg-black opacity-50"
             onClick={() => setActive(false)}
-          ></a>
+          ></div>
           <nav className="flex flex-col gap-2 w-3/5 absolute right-0 h-screen bg-gray-3 p-4">
-            <a className="self-end" onClick={() => setActive(false)}>
+            <button className="self-end" onClick={() => setActive(false)}>
               <img
                 className="w-3 cursor-pointer"
                 src="./images/icons/close.png"
                 alt=""
               />
-            </a>
+            </button>
             <h1 className="text-6xl text-center border-b-2 w-full pt-10 pb-6">
               VAPOR
             </h1>

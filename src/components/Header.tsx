@@ -12,7 +12,7 @@ export default function Header() {
         {/* <Link to="">Home</Link>
         <Link to="products">Products</Link> */}
         <Link to="checkout">
-          <img className="w-8" src="/images/icons/cart.png"></img>
+          <img className="w-8" src="/images/icons/cart.png" alt="cart"></img>
         </Link>
         <SideMenu />
       </nav>
