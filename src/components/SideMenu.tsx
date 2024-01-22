@@ -6,11 +6,7 @@ export default function SideMenu() {
 
   return (
     <>
-      <button
-        className="cursor-pointer"
-        onClick={() => setActive(true)}
-        data-testid="menu-icon"
-      >
+      <button className="cursor-pointer" onClick={() => setActive(true)}>
         <img className="w-8" src="./images/icons/menu.png" alt="menu" />
       </button>
 
