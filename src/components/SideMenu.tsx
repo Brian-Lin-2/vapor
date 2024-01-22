@@ -23,7 +23,7 @@ export default function SideMenu() {
             className="w-2/5 bg-black opacity-50"
             onClick={() => setActive(false)}
           ></div>
-          <nav className="flex flex-col gap-2 w-3/5 absolute right-0 h-screen bg-gray-3 p-4">
+          <nav className="flex flex-col gap-2 w-3/5 absolute h-screen right-0 bg-gray-3 p-4">
             <button className="self-end" onClick={() => setActive(false)}>
               <img
                 className="w-3 cursor-pointer"
@@ -35,10 +35,18 @@ export default function SideMenu() {
               VAPOR
             </h1>
             <ul className="flex flex-col gap-4 text-2xl pt-8">
-              <Link to="" onClick={() => setActive(false)}>
+              <Link
+                to=""
+                className="hover:text-gray-2"
+                onClick={() => setActive(false)}
+              >
                 Home
               </Link>
-              <Link to="products" onClick={() => setActive(false)}>
+              <Link
+                to="products"
+                className="hover:text-gray-2"
+                onClick={() => setActive(false)}
+              >
                 Products
               </Link>
             </ul>

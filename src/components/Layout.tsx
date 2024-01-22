@@ -3,7 +3,7 @@ import Header from "./Header";
 
 export default function Layout() {
   return (
-    <div className="font-roboto w-[375px] bg-[url('/gifs/vapor.gif')] bg-cover h-screen text-white">
+    <div className="font-roboto bg-[url('/gifs/vapor.gif')] bg-cover h-svh min-h-[30rem] text-white w-[375px]">
       <header>
         <Header />
       </header>

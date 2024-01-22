@@ -7,7 +7,7 @@ export default {
         // Text:
         white: "rgb(255, 255, 255)",
         "light-gray": "rgb(129, 139, 151)",
-        "gray-2": "rgb(91, 90, 85)",
+        "gray-2": "rgb(138, 138, 138)",
         "gray-3": "rgb(32, 32, 32)",
 
         // Background:
@@ -28,6 +28,13 @@ export default {
       },
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+      },
+      lineHeight: {
+        header: "1.2rem",
+        text: "1.5rem",
+      },
+      letterSpacing: {
+        header: "-1%",
       },
     },
   },
