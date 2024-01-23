@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { type Game } from "../../utils/types";
+import Products from "./Products";
 
 export default function ProductPage() {
-  const [games, setGames] = useState<any>(null);
+  const [games, setGames] = useState<Game[] | null>(null);
 
   useEffect(() => {
     async function getGames() {
@@ -34,13 +35,9 @@ export default function ProductPage() {
     return <div>Loading</div>;
   }
 
-  console.log(games[0]);
-
   return (
     <div className="text-white">
-      {games.map((game: Game) => {
-        return <div key={game.id}>{game.name}</div>;
-      })}
+      <Products games={games} />
     </div>
   );
 }
