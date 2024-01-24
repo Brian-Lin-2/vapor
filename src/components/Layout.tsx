@@ -4,8 +4,7 @@ import { useLocation } from "react-router-dom";
 
 export default function Layout() {
   const path = useLocation();
-  let style =
-    "font-roboto bg-black h-[max(100svh,_40rem)] text-white w-[375px]";
+  let style = "font-roboto bg-black min-h-screen text-white w-[375px] pb-4";
 
   if (path.pathname === "/") {
     style =

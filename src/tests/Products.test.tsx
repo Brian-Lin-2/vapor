@@ -7,7 +7,7 @@ describe("Rendering:", () => {
   it("Title is rendered", () => {
     const gamesMock: Game[] = [{ ...defaultGame, id: 1, name: "test" }];
 
-    render(<Products games={gamesMock} />);
+    render(<Products games={gamesMock} title="" />);
 
     expect(screen.getByText("test"));
   });
