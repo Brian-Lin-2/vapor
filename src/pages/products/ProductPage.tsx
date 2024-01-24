@@ -11,6 +11,7 @@ export default function ProductPage() {
         "https://api.rawg.io/api/games?key=5298ccfc499d4faa98c321831cf6252d&page=1"
       );
       const data = await res.json();
+      console.log(data);
 
       const filteredData: Game[] = data.results.map((game: Game) => ({
         id: game.id,
@@ -19,13 +20,16 @@ export default function ProductPage() {
         rating_max: game.rating_top,
         ratings_count: game.ratings_count,
         released: game.released,
-        screenshots: game.short_screenshots,
+        background_image: game.background_image,
+        short_screenshots: game.short_screenshots,
         slug: game.slug,
-        platforms: game.parent_platforms,
+        parent_platforms: game.parent_platforms,
         tags: game.tags,
+        // Hard coded for now.
+        price: "$49.99",
       }));
 
-      setGames(filteredData);
+      setGames(filteredData.slice(0, 1));
     }
 
     getGames();

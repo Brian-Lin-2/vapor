@@ -5,16 +5,20 @@ export type Game = {
   rating_top: number;
   ratings_count: number;
   released: string;
+  background_image: string;
   short_screenshots: Screenshots[];
   slug: string;
   parent_platforms: Platform[];
   tags: string[];
+  price: string;
 };
 
 export type Platform = {
-  id: number;
-  name: string;
-  slug: string;
+  platform: {
+    id: number;
+    name: string;
+    slug: string;
+  };
 };
 
 export type Screenshots = {

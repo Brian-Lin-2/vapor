@@ -1,12 +1,12 @@
 import { type Game } from "../../utils/types";
+import ProductCard from "./ProductCard";
 
 export default function Products({ games }: { games: Game[] }) {
-  console.log(JSON.stringify(games[0]));
   return (
-    <>
+    <ul className="text-white">
       {games.map((game: Game) => {
-        return <div key={game.id}>{game.name}</div>;
+        return <ProductCard key={game.id} game={game} />;
       })}
-    </>
+    </ul>
   );
 }
