@@ -23,7 +23,7 @@ export default function ProductCard({ game }: { game: Game }) {
           <p className="text-gray-2">{game.price}</p>
         </div>
         <h1 className="text-xl mt-1.5">{game.name}</h1>
-        <button className="border px-2 rounded-md self-end">+</button>
+        <button className="border px-2 rounded-md self-end mt-1.5">+</button>
       </div>
     </div>
   );

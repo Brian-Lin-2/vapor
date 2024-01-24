@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { type Game } from "../../utils/types";
 import Products from "./Products";
+import Loading from "../../components/Loading";
 
 export default function ProductPage() {
   const [games, setGames] = useState<Game[] | null>(null);
@@ -41,7 +42,7 @@ export default function ProductPage() {
   }, []);
 
   if (!games) {
-    return <div>Loading...</div>;
+    return <Loading />;
   }
 
   return (
