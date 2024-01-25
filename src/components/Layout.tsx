@@ -8,7 +8,7 @@ export default function Layout() {
 
   if (path.pathname === "/") {
     style =
-      "font-roboto bg-[url('/gifs/vapor.gif')] bg-cover h-[max(100svh,_40rem)] text-white w-[375px]";
+      "font-roboto bg-[url('/gifs/vapor.gif')] bg-cover h-screen min-h-[20rem] overflow-y-hidden flex flex-col text-white w-[375px]";
   }
 
   return (
@@ -16,7 +16,7 @@ export default function Layout() {
       <header>
         <Header />
       </header>
-      <main>
+      <main className="flex-grow">
         <Outlet />
       </main>
     </div>
