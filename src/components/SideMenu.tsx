@@ -6,20 +6,23 @@ export default function SideMenu() {
 
   return (
     <>
-      <button className="cursor-pointer" onClick={() => setActive(true)}>
+      <button
+        className="cursor-pointer md:hidden"
+        onClick={() => setActive(true)}
+      >
         <img className="w-8" src="./images/icons/menu.png" alt="menu" />
       </button>
 
       {active && (
         <div
-          className="absolute h-screen w-[375px] left-0 top-0 flex"
+          className="absolute min-h-screen w-full left-0 top-0 flex"
           data-testid="side-menu"
         >
           <div
             className="w-2/5 bg-black opacity-50"
             onClick={() => setActive(false)}
           ></div>
-          <nav className="flex flex-col gap-2 w-3/5 absolute h-screen right-0 bg-gray-3 p-4">
+          <nav className="flex flex-col gap-2 w-3/5 absolute min-h-screen right-0 bg-gray-3 p-4">
             <button className="self-end" onClick={() => setActive(false)}>
               <img
                 className="w-3 cursor-pointer"
