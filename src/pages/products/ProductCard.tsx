@@ -9,6 +9,7 @@ export default function ProductCard({ game }: { game: GamePreview }) {
   return (
     <Link
       to={game.slug}
+      state={{ id: game.id }}
       className="bg-gray-3 rounded-lg overflow-hidden cursor-pointer"
     >
       <img

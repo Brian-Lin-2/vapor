@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { type GamePreview } from "../../utils/types";
+import { filterPreview } from "../../utils/filters";
 import Products from "./Products";
 import Loading from "../../components/Loading";
 
@@ -16,20 +17,8 @@ export default function ProductPage() {
         const data = await res.json();
         console.log(data);
 
-        const filteredData: GamePreview[] = data.results.map(
-          (game: GamePreview) => ({
-            id: game.id,
-            name: game.name,
-            background_image: game.background_image,
-            slug: game.slug,
-            parent_platforms: game.parent_platforms,
-            // Hard coded for now.
-            price: "$49.99",
-          })
-        );
-
         setTitle(data.seo_title);
-        setGames(filteredData);
+        setGames(filterPreview(data.results));
       } catch {
         return <div>Error has occured.</div>;
       }
