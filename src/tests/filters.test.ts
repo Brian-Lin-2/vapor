@@ -2,6 +2,7 @@ import {
   filterPlatform,
   filterScreenshot,
   filterPreview,
+  filterInfo,
   filterTag,
   filterCompany,
 } from "../utils/filters";
@@ -61,6 +62,47 @@ describe("Filter Functions", () => {
     ];
 
     expect(filterPreview(filler)).toStrictEqual(expected);
+  });
+
+  it("filterPreview", () => {
+    const filler = [{ ...fillerObject }];
+
+    const expected = [
+      {
+        id: 0,
+        name: "test_name",
+        background_image: "test_background_image",
+        slug: "test_slug",
+        parent_platforms: [],
+        price: "$49.99",
+      },
+    ];
+
+    expect(filterPreview(filler)).toStrictEqual(expected);
+  });
+
+  it("filterInfo", () => {
+    const expected = {
+      id: 0,
+      name: "test_name",
+      released: "test_released",
+      tags: [],
+      description_raw: "test_description_raw",
+      platforms: [],
+      developers: [],
+      publishers: [],
+      genres: [],
+      rating: 0,
+      rating_top: 5,
+      esrb_rating: [],
+      ratings: [],
+      updated: "test_updated",
+      website: "test_website",
+      screenshots: [],
+      price: "$49.99",
+    };
+
+    expect(filterInfo(fillerObject)).toStrictEqual(expected);
   });
 
   it("filterTag", () => {

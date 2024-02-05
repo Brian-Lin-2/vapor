@@ -2,6 +2,7 @@ import {
   type Platform,
   type Screenshot,
   type GamePreview,
+  type GameInfo,
   type Tag,
   type Company,
 } from "./types";
@@ -45,6 +46,31 @@ export function filterPreview(preview: GamePreview[]): GamePreview[] {
   });
 
   return filteredPreview;
+}
+
+export function filterInfo(game: GameInfo): GameInfo {
+  const filteredInfo = {
+    id: game.id,
+    name: game.name,
+    released: game.released,
+    tags: filterTag(game.tags),
+    description_raw: game.description_raw,
+    platforms: filterPlatform(game.platforms),
+    developers: filterCompany(game.developers),
+    publishers: filterCompany(game.publishers),
+    genres: game.genres,
+    rating: game.rating,
+    rating_top: game.rating_top,
+    esrb_rating: game.esrb_rating,
+    ratings: game.ratings,
+    updated: game.updated,
+    website: game.website,
+    screenshots: [],
+    // Hard coded for now
+    price: "$49.99",
+  };
+
+  return filteredInfo;
 }
 
 export function filterTag(tag: Tag[]): Tag[] {

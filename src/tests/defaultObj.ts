@@ -4,7 +4,7 @@ export const defaultGame = {
   background_image: "",
   parent_platforms: [],
   slug: "",
-  price: 49.99,
+  price: "$49.99",
 };
 
 export const fillerObject = {
@@ -18,14 +18,16 @@ export const fillerObject = {
   released: "test_released",
   tags: [],
   platforms: [],
-  description: "test_description",
+  description_raw: "test_description_raw",
   developers: [],
   publishers: [],
   rating: 0,
   rating_top: 5,
-  ratings: 0,
+  ratings: [],
+  esrb_rating: [],
   updated: "test_updated",
   website: "test_website",
   screenshots: [],
   platform: {},
+  genres: [],
 };

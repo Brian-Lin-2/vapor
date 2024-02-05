@@ -13,15 +13,18 @@ export type GameInfo = {
   released: string;
   tags: Tag[];
   platforms: Platform[];
-  description: string;
+  description_raw: string;
   developers: Company[];
   publishers: Company[];
+  genres: Genre[];
   rating: number;
   rating_top: number;
-  ratings: number;
+  ratings: Rating[];
+  esrb_rating: ESRB[];
   updated: string;
   website: string;
   screenshots: Screenshot[];
+  price: string;
 };
 
 export type Platform = {
@@ -48,4 +51,25 @@ export type Company = {
   id: number;
   name: string;
   slug: string;
+};
+
+export type ESRB = {
+  id: number;
+  name: string;
+  slug: string;
+};
+
+export type Genre = {
+  count: number;
+  id: number;
+  image_background: string;
+  name: string;
+  slug: string;
+};
+
+export type Rating = {
+  count: number;
+  id: number;
+  percent: number;
+  title: string;
 };

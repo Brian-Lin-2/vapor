@@ -15,7 +15,6 @@ export default function ProductPage() {
           "https://api.rawg.io/api/games?key=5298ccfc499d4faa98c321831cf6252d&page=1"
         );
         const data = await res.json();
-        console.log(data);
 
         setTitle(data.seo_title);
         setGames(filterPreview(data.results));
