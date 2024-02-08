@@ -36,6 +36,9 @@ export default {
       letterSpacing: {
         header: "-1%",
       },
+      backgroundImage: {
+        "stars-gradient": `linear-gradient(90deg, white 90%, gray-2 10%;`,
+      },
     },
   },
   plugins: [],

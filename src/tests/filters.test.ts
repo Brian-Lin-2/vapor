@@ -94,6 +94,7 @@ describe("Filter Functions", () => {
       genres: [],
       rating: 0,
       rating_top: 5,
+      ratings_count: 0,
       esrb_rating: [],
       ratings: [],
       updated: "test_updated",

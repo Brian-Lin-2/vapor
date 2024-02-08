@@ -7,6 +7,7 @@ import { filterInfo, filterScreenshot } from "../../utils/filters";
 export default function ProductInfo() {
   const [info, setInfo] = useState<GameInfo | null>(null);
   const id = useLocation().state.id;
+  const [expand, setExpand] = useState(false);
 
   useEffect(() => {
     let gameInfo: GameInfo;
@@ -16,6 +17,7 @@ export default function ProductInfo() {
         `https://api.rawg.io/api/games/${id}?key=5298ccfc499d4faa98c321831cf6252d`
       );
       const data = await res.json();
+      console.log(data);
 
       gameInfo = filterInfo(data);
     }
@@ -43,6 +45,16 @@ export default function ProductInfo() {
     return <Loading />;
   }
 
+  console.log(info);
+
+  // Minor text cleaning.
+  let description = info.description_raw;
+  const breakpoint = info.description_raw.indexOf("Español");
+
+  if (breakpoint > 0) {
+    description = description.substring(0, breakpoint);
+  }
+
   return (
     <div className="mx-6 mt-2 md:mx-20">
       <div className="flex justify-between mx-1">
@@ -63,32 +75,53 @@ export default function ProductInfo() {
       </div>
 
       <div className="flex flex-col gap-3 mt-4">
+        {/* Image */}
         <img
           className="rounded-2xl h-[40vh] object-cover"
           src={info.screenshots[0].image}
           alt="game image"
         ></img>
-        <h1 className="text-3xl font-bold text-center">{info.name}</h1>
-        <p>
-          {info.rating} / {info.rating_top}
-        </p>
-        <h2>About</h2>
-        <p>
-          {info.description_raw.substring(
-            0,
-            info.description_raw.indexOf("Español")
-          )}
-        </p>
-        <h2>Overview</h2>
-        <h3>Rating</h3>
+
+        {/* Name / Rating */}
+        <div>
+          <h1 className="text-3xl font-bold">{info.name}</h1>
+          <div>
+            <span className="mr-1">★★★★★</span>
+
+            <span className="text-sm underline cursor-pointer hover:text-blue-200">
+              {info.rating_count}
+            </span>
+          </div>
+        </div>
+
+        <h2 className="text-xl pb-1 border-b border-gray-2">About</h2>
+
+        <div>
+          <div
+            className={`p-3 rounded bg-gray-3 ${!expand && "h-60 overflow-hidden"}`}
+          >
+            <p>{description}</p>
+          </div>
+          <button
+            className="w-full flex justify-center"
+            onClick={() => setExpand(!expand)}
+          >
+            <img
+              className={`w-8 ${expand && "rotate-180"}`}
+              src="/images/icons/arrow.png"
+              alt=""
+            />
+          </button>
+        </div>
+
+        {/* <h2>Overview</h2>
+        <h3>Genre</h3>
+        <h3>Tags</h3>
         <h3>Developers</h3>
         <h3>Released</h3>
         <h3>Updated</h3>
         <h3>Website</h3>
-        <h3>ESRB</h3>
-        <h3>Genre</h3>
-        <h3>Tags</h3>
-        <h3></h3>
+        <h3>ESRB</h3> */}
       </div>
     </div>
   );

@@ -19,6 +19,7 @@ export type GameInfo = {
   genres: Genre[];
   rating: number;
   rating_top: number;
+  rating_count: number;
   ratings: Rating[];
   esrb_rating: ESRB[];
   updated: string;

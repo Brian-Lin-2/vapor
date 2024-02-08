@@ -23,6 +23,7 @@ export const fillerObject = {
   publishers: [],
   rating: 0,
   rating_top: 5,
+  rating_count: 0,
   ratings: [],
   esrb_rating: [],
   updated: "test_updated",

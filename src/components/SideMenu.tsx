@@ -10,7 +10,7 @@ export default function SideMenu() {
         className="cursor-pointer md:hidden"
         onClick={() => setActive(true)}
       >
-        <img className="w-8" src="./images/icons/menu.png" alt="menu" />
+        <img className="w-8" src="/images/icons/menu.png" alt="" />
       </button>
 
       {active && (
@@ -26,7 +26,7 @@ export default function SideMenu() {
             <button className="self-end" onClick={() => setActive(false)}>
               <img
                 className="w-3 cursor-pointer"
-                src="./images/icons/close.png"
+                src="/images/icons/close.png"
                 alt=""
               />
             </button>

@@ -60,6 +60,7 @@ export function filterInfo(game: GameInfo): GameInfo {
     publishers: filterCompany(game.publishers),
     genres: game.genres,
     rating: game.rating,
+    rating_count: game.ratings.reduce((acc, e) => acc + e.count, 0),
     rating_top: game.rating_top,
     esrb_rating: game.esrb_rating,
     ratings: game.ratings,
