@@ -41,7 +41,7 @@ export function filterPreview(preview: GamePreview[]): GamePreview[] {
       slug: game.slug,
       parent_platforms: game.parent_platforms,
       // Hard coded for now.
-      price: "$49.99",
+      price: 49.99,
     };
   });
 
@@ -68,7 +68,7 @@ export function filterInfo(game: GameInfo): GameInfo {
     website: game.website,
     screenshots: [],
     // Hard coded for now
-    price: "$49.99",
+    price: 49.99,
   };
 
   return filteredInfo;

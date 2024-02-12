@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
 import { useLocation } from "react-router-dom";
+import CartProvider from "../pages/cart/CartContext";
 
 export default function Layout() {
   const path = useLocation();
@@ -12,13 +13,15 @@ export default function Layout() {
   }
 
   return (
-    <div className={style}>
-      <header>
-        <Header />
-      </header>
-      <main className="flex-grow">
-        <Outlet />
-      </main>
-    </div>
+    <CartProvider>
+      <div className={style}>
+        <header>
+          <Header />
+        </header>
+        <main className="flex-grow">
+          <Outlet />
+        </main>
+      </div>
+    </CartProvider>
   );
 }

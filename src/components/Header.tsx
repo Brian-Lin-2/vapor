@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import SideMenu from "./SideMenu";
+import Cart from "../pages/cart/Cart";
 
 export default function Header() {
   return (
@@ -15,13 +16,7 @@ export default function Header() {
         <Link to="products" className="hidden md:block">
           Products
         </Link>
-        <Link to="checkout">
-          <img
-            className="w-8 md:w-12"
-            src="/images/icons/cart.png"
-            alt="cart"
-          ></img>
-        </Link>
+        <Cart />
         <SideMenu />
       </nav>
     </div>

@@ -19,18 +19,18 @@ export default function SideMenu() {
           data-testid="side-menu"
         >
           <div
-            className="w-2/5 bg-black opacity-50"
+            className="w-full bg-black opacity-50"
             onClick={() => setActive(false)}
           ></div>
-          <nav className="flex flex-col gap-2 w-3/5 absolute min-h-screen right-0 bg-gray-3 p-4">
+          <nav className="flex flex-col gap-2 w-64 absolute min-h-screen right-0 bg-gray-3 p-4">
             <button className="self-end" onClick={() => setActive(false)}>
               <img
-                className="w-3 cursor-pointer"
+                className="w-4 cursor-pointer"
                 src="/images/icons/close.png"
                 alt=""
               />
             </button>
-            <h1 className="text-6xl text-center border-b-2 w-full pt-10 pb-6">
+            <h1 className="text-6xl text-center border-b-2 w-full pt-8 pb-4">
               VAPOR
             </h1>
             <ul className="flex flex-col gap-4 text-2xl pt-8">

@@ -57,7 +57,7 @@ describe("Filter Functions", () => {
         background_image: "test_background_image",
         slug: "test_slug",
         parent_platforms: [],
-        price: "$49.99",
+        price: 49.99,
       },
     ];
 
@@ -74,7 +74,7 @@ describe("Filter Functions", () => {
         background_image: "test_background_image",
         slug: "test_slug",
         parent_platforms: [],
-        price: "$49.99",
+        price: 49.99,
       },
     ];
 
@@ -100,7 +100,7 @@ describe("Filter Functions", () => {
       updated: "test_updated",
       website: "test_website",
       screenshots: [],
-      price: "$49.99",
+      price: 49.99,
     };
 
     expect(filterInfo(fillerObject)).toStrictEqual(expected);

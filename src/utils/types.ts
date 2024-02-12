@@ -4,7 +4,7 @@ export type GamePreview = {
   background_image: string;
   slug: string;
   parent_platforms: Platform[];
-  price: string;
+  price: number;
 };
 
 export type GameInfo = {
@@ -25,7 +25,7 @@ export type GameInfo = {
   updated: string;
   website: string;
   screenshots: Screenshot[];
-  price: string;
+  price: number;
 };
 
 export type Platform = {

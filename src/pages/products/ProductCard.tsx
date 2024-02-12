@@ -1,15 +1,24 @@
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { type GamePreview } from "../../utils/types";
+import { CartContext } from "../cart/CartContext";
 
 export default function ProductCard({ game }: { game: GamePreview }) {
   const platforms = game.parent_platforms.filter((item) => {
     return "pc, playstation, xbox, nintendo, ios".includes(item.platform.slug);
   });
 
+  const { items, addItem } = useContext(CartContext);
+
+  // Check to see if it's already added.
+  const [added, setAdded] = useState(
+    items.find((e) => e.id == game.id) || false
+  );
+
   return (
     <Link
       to={game.slug}
-      state={{ id: game.id }}
+      state={game}
       className="bg-gray-3 rounded-lg overflow-hidden cursor-pointer"
     >
       <img
@@ -29,14 +38,18 @@ export default function ProductCard({ game }: { game: GamePreview }) {
               );
             })}
           </ul>
-          <p className="text-gray-2">{game.price}</p>
+          <p className="text-gray-2">${game.price}</p>
         </div>
         <h1 className="text-xl mt-1.5">{game.name}</h1>
         <button
-          className="border px-2 rounded-md self-end mt-1.5"
-          onClick={(e) => e.preventDefault()}
+          className={`border px-2 rounded-md self-end mt-1.5 ${added && "border-none text-lg"}`}
+          onClick={(e) => {
+            e.preventDefault();
+            addItem(game);
+            setAdded(true);
+          }}
         >
-          +
+          {added ? "✓" : "+"}
         </button>
       </div>
     </Link>

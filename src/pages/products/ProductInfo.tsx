@@ -1,12 +1,20 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Loading from "../../components/Loading";
 import { type GameInfo } from "../../utils/types";
 import { filterInfo, filterScreenshot } from "../../utils/filters";
+import { CartContext } from "../cart/CartContext";
 
 export default function ProductInfo() {
+  const { items, addItem } = useContext(CartContext);
   const [info, setInfo] = useState<GameInfo | null>(null);
-  const id = useLocation().state.id;
+  const game = useLocation().state;
+
+  // Check to see if it's already added.
+  const [added, setAdded] = useState(
+    items.find((e) => e.id == game.id) || false
+  );
+
   const [expand, setExpand] = useState(false);
 
   useEffect(() => {
@@ -14,17 +22,16 @@ export default function ProductInfo() {
 
     async function getInfo() {
       const res = await fetch(
-        `https://api.rawg.io/api/games/${id}?key=5298ccfc499d4faa98c321831cf6252d`
+        `https://api.rawg.io/api/games/${game.id}?key=5298ccfc499d4faa98c321831cf6252d`
       );
       const data = await res.json();
-      console.log(data);
 
       gameInfo = filterInfo(data);
     }
 
     async function getScreenshots() {
       const res = await fetch(
-        `https://api.rawg.io/api/games/${id}/screenshots?key=5298ccfc499d4faa98c321831cf6252d`
+        `https://api.rawg.io/api/games/${game.id}/screenshots?key=5298ccfc499d4faa98c321831cf6252d`
       );
       const data = await res.json();
 
@@ -44,8 +51,6 @@ export default function ProductInfo() {
   if (!info) {
     return <Loading />;
   }
-
-  console.log(info);
 
   // Minor text cleaning.
   let description = info.description_raw;
@@ -69,8 +74,14 @@ export default function ProductInfo() {
           />
           <button>Back</button>
         </Link>
-        <button className="font-bold border px-3 py-0.5 rounded-full">
-          Add +
+        <button
+          className={`font-bold border px-3 py-0.5 rounded-full ${added && "bg-white text-black"}`}
+          onClick={() => {
+            addItem(game);
+            setAdded(true);
+          }}
+        >
+          {added ? "Added" : "Add +"}
         </button>
       </div>
 
