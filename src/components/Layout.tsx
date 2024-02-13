@@ -5,7 +5,8 @@ import CartProvider from "../pages/cart/CartContext";
 
 export default function Layout() {
   const path = useLocation();
-  let style = "font-roboto bg-black min-h-screen text-white pb-4 w-[375px]";
+  let style =
+    "font-roboto bg-black min-h-screen text-white pb-4 w-[375px] flex flex-col";
 
   if (path.pathname === "/") {
     style =
@@ -18,7 +19,7 @@ export default function Layout() {
         <header>
           <Header />
         </header>
-        <main className="flex-grow">
+        <main className="flex-grow flex flex-col">
           <Outlet />
         </main>
       </div>

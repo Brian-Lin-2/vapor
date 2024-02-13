@@ -1,10 +1,11 @@
 import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
-import CardItem from "./CartItem";
+import CartItem from "./CartItem";
 
 export default function Cart() {
   const [active, setActive] = useState(false);
-  const { items } = useContext(CartContext);
+  const { items, clearCart } = useContext(CartContext);
   const count = items.length;
   const total = items.reduce((acc, game) => acc + game.price, 0);
 
@@ -33,7 +34,9 @@ export default function Cart() {
             {/* Added Items */}
             <ul className="flex-grow flex flex-col gap-3">
               {items.map((item) => {
-                return <CardItem item={item} key={item.id} />;
+                return (
+                  <CartItem item={item} setActive={setActive} key={item.id} />
+                );
               })}
             </ul>
 
@@ -43,9 +46,20 @@ export default function Cart() {
             </p>
             <div className="border-t px-2 pt-4 flex flex-col gap-4 text-lg">
               <p>Total: ${total}</p>
-              <button className="self-end border rounded-xl px-2.5 py-1 text-base">
+              <Link
+                to="checkout"
+                className="self-end border rounded-xl px-2.5 py-1 text-base"
+                onClick={(e) => {
+                  if (items.length == 0) {
+                    e.preventDefault();
+                  } else {
+                    clearCart();
+                    setActive(false);
+                  }
+                }}
+              >
                 Buy
-              </button>
+              </Link>
             </div>
           </div>
         </div>

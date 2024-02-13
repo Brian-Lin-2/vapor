@@ -5,12 +5,14 @@ type CartContextType = {
   items: GamePreview[];
   addItem: (item: GamePreview) => void;
   removeItem: (item: GamePreview) => void;
+  clearCart: () => void;
 };
 
 export const CartContext = createContext<CartContextType>({
   items: [],
   addItem: () => {},
   removeItem: () => {},
+  clearCart: () => {},
 });
 
 export default function CartProvider({ children }: { children: ReactNode }) {
@@ -27,8 +29,12 @@ export default function CartProvider({ children }: { children: ReactNode }) {
     setItems(items.filter((e) => e.id != item.id));
   }
 
+  function clearCart() {
+    setItems([]);
+  }
+
   return (
-    <CartContext.Provider value={{ items, addItem, removeItem }}>
+    <CartContext.Provider value={{ items, addItem, removeItem, clearCart }}>
       {children}
     </CartContext.Provider>
   );
