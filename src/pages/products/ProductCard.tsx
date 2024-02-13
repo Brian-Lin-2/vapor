@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { type GamePreview } from "../../utils/types";
 import { CartContext } from "../cart/CartContext";
@@ -10,10 +10,10 @@ export default function ProductCard({ game }: { game: GamePreview }) {
 
   const { items, addItem } = useContext(CartContext);
 
-  // Check to see if it's already added.
-  const [added, setAdded] = useState(
-    items.find((e) => e.id == game.id) || false
-  );
+  // Check to see if game is added.
+  function isAdded() {
+    return items.find((e) => e.id == game.id);
+  }
 
   return (
     <Link
@@ -42,14 +42,13 @@ export default function ProductCard({ game }: { game: GamePreview }) {
         </div>
         <h1 className="text-xl mt-1.5">{game.name}</h1>
         <button
-          className={`border px-2 rounded-md self-end mt-1.5 ${added && "border-none text-lg"}`}
+          className={`border px-2 rounded-md self-end mt-1.5 ${isAdded() && "border-none text-lg"}`}
           onClick={(e) => {
             e.preventDefault();
             addItem(game);
-            setAdded(true);
           }}
         >
-          {added ? "✓" : "+"}
+          {isAdded() ? "✓" : "+"}
         </button>
       </div>
     </Link>

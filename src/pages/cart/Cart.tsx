@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { CartContext } from "./CartContext";
+import CardItem from "./CartItem";
 
 export default function Cart() {
   const [active, setActive] = useState(false);
@@ -10,15 +11,11 @@ export default function Cart() {
   return (
     <>
       <button onClick={() => setActive(true)}>
-        <img
-          className="w-8 md:w-12"
-          src="/images/icons/cart.png"
-          alt="cart"
-        ></img>
+        <img className="w-8 md:w-12" src="/images/icons/cart.png" alt="cart" />
       </button>
 
       {active && (
-        <div className="absolute min-h-screen left-0 top-0 flex w-full">
+        <div className="fixed h-screen min-h-screen left-0 top-0 flex w-full">
           <div
             className="bg-black opacity-50 flex-grow"
             onClick={() => setActive(false)}
@@ -32,11 +29,15 @@ export default function Cart() {
               />
             </button>
             <h1 className="text-4xl">CART</h1>
-            <div className="flex-grow">
-              {items.map(() => {
-                return <div>Hi</div>;
+
+            {/* Added Items */}
+            <ul className="flex-grow flex flex-col gap-3">
+              {items.map((item) => {
+                return <CardItem item={item} key={item.id} />;
               })}
-            </div>
+            </ul>
+
+            {/* Count / Total */}
             <p className="text-gray-2">
               {count} {count == 1 ? "Item" : "Items"}
             </p>

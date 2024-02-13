@@ -15,7 +15,7 @@ export default function SideMenu() {
 
       {active && (
         <div
-          className="absolute min-h-screen w-full left-0 top-0 flex"
+          className="fixed min-h-screen w-full left-0 top-0 flex"
           data-testid="side-menu"
         >
           <div

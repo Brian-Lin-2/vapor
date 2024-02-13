@@ -9,12 +9,6 @@ export default function ProductInfo() {
   const { items, addItem } = useContext(CartContext);
   const [info, setInfo] = useState<GameInfo | null>(null);
   const game = useLocation().state;
-
-  // Check to see if it's already added.
-  const [added, setAdded] = useState(
-    items.find((e) => e.id == game.id) || false
-  );
-
   const [expand, setExpand] = useState(false);
 
   useEffect(() => {
@@ -60,6 +54,11 @@ export default function ProductInfo() {
     description = description.substring(0, breakpoint);
   }
 
+  // Check to see if game is added.
+  function isAdded() {
+    return items.find((e) => e.id == game.id);
+  }
+
   return (
     <div className="mx-6 mt-2 md:mx-20">
       <div className="flex justify-between mx-1">
@@ -75,13 +74,12 @@ export default function ProductInfo() {
           <button>Back</button>
         </Link>
         <button
-          className={`font-bold border px-3 py-0.5 rounded-full ${added && "bg-white text-black"}`}
+          className={`font-bold border px-3 py-0.5 rounded-full ${isAdded() && "bg-white text-black"}`}
           onClick={() => {
             addItem(game);
-            setAdded(true);
           }}
         >
-          {added ? "Added" : "Add +"}
+          {isAdded() ? "Added" : "Add +"}
         </button>
       </div>
 
