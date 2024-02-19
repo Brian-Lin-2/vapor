@@ -7,7 +7,7 @@ export default function Cart() {
   const [active, setActive] = useState(false);
   const { items, clearCart } = useContext(CartContext);
   const count = items.length;
-  const total = items.reduce((acc, game) => acc + game.price, 0);
+  const total = items.reduce((acc, game) => acc + game.price, 0).toFixed(2);
 
   return (
     <>
@@ -16,7 +16,7 @@ export default function Cart() {
       </button>
 
       {active && (
-        <div className="fixed h-screen min-h-screen left-0 top-0 flex w-full">
+        <div className="fixed h-screen left-0 top-0 flex w-full">
           <div
             className="bg-black opacity-50 flex-grow"
             onClick={() => setActive(false)}
@@ -32,7 +32,7 @@ export default function Cart() {
             <h1 className="text-4xl">CART</h1>
 
             {/* Added Items */}
-            <ul className="flex-grow flex flex-col gap-3">
+            <ul className="flex-grow flex flex-col gap-3 overflow-y-scroll">
               {items.map((item) => {
                 return (
                   <CartItem item={item} setActive={setActive} key={item.id} />
@@ -45,7 +45,9 @@ export default function Cart() {
               {count} {count == 1 ? "Item" : "Items"}
             </p>
             <div className="border-t px-2 pt-4 flex flex-col gap-4 text-lg">
-              <p>Total: ${total}</p>
+              <p>
+                Total: <span className="ml-1">${total}</span>
+              </p>
               <Link
                 to="checkout"
                 className="self-end border rounded-xl px-2.5 py-1 text-base"

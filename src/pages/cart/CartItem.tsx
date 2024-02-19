@@ -13,16 +13,19 @@ export default function CartItem({
   const { removeItem } = useContext(CartContext);
 
   return (
-    <div className="rounded-lg overflow-hidden bg-gray-3">
-      <img src={item.background_image} alt="game image" />
+    <Link
+      to={`products/${item.slug}`}
+      state={item}
+      onClick={() => setActive(false)}
+      className="rounded-lg bg-gray-3"
+    >
+      <img
+        className="rounded-t-lg"
+        src={item.background_image}
+        alt="game image"
+      />
       <div className="p-3">
-        <Link
-          to={`products/${item.slug}`}
-          state={item}
-          onClick={() => setActive(false)}
-        >
-          {item.name}
-        </Link>
+        <h1>{item.name}</h1>
         <div className="flex justify-between mt-0.5">
           <p className="text-gray-2 text-sm">{item.price}</p>
           <button onClick={() => removeItem(item)}>
@@ -30,6 +33,6 @@ export default function CartItem({
           </button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

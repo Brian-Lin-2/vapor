@@ -20,7 +20,6 @@ describe("Rendering / Opening:", () => {
     );
 
     const button = screen.getByAltText(/menu/i);
-
     await user.click(button);
 
     expect(screen.getByTestId(/side-menu/i));
