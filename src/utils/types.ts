@@ -21,7 +21,7 @@ export type GameInfo = {
   rating_top: number;
   rating_count: number;
   ratings: Rating[];
-  esrb_rating: ESRB[];
+  esrb_rating: ESRB;
   updated: string;
   website: string;
   screenshots: Screenshot[];

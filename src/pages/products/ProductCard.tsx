@@ -42,7 +42,7 @@ export default function ProductCard({ game }: { game: GamePreview }) {
         </div>
         <h1 className="text-xl mt-1.5">{game.name}</h1>
         <button
-          className={`border px-2 rounded-md self-end mt-1.5 ${isAdded() && "border-none text-lg"}`}
+          className={`border px-2 rounded-md self-end mt-1 ${!isAdded() && "hover:bg-white hover:text-black"} ${isAdded() && "border-none text-lg cursor-default"}`}
           onClick={(e) => {
             e.preventDefault();
             addItem(game);

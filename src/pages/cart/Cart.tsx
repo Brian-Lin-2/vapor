@@ -16,7 +16,7 @@ export default function Cart() {
       </button>
 
       {active && (
-        <div className="fixed h-screen left-0 top-0 flex w-full">
+        <div className="fixed h-screen z-10 left-0 top-0 flex w-full">
           <div
             className="bg-black opacity-50 flex-grow"
             onClick={() => setActive(false)}
