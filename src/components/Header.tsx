@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div className="flex justify-between p-4 items-center md:pt-6 md:px-16">
       <Link to="">
-        <img className="w-20 md:w-28" src="/images/icons/logo.png"></img>
+        <img className="w-20 md:w-24" src="/images/icons/logo.png"></img>
       </Link>
 
       <nav className="flex items-center gap-4 md:text-xl md:font-bold md:gap-8">

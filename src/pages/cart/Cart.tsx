@@ -12,7 +12,7 @@ export default function Cart() {
   return (
     <>
       <button onClick={() => setActive(true)}>
-        <img className="w-8 md:w-12" src="/images/icons/cart.png" alt="cart" />
+        <img className="w-8 md:w-10" src="/images/icons/cart.png" alt="cart" />
       </button>
 
       {active && (
@@ -21,7 +21,7 @@ export default function Cart() {
             className="bg-black opacity-50 flex-grow"
             onClick={() => setActive(false)}
           ></div>
-          <div className="w-64 bg-black flex flex-col gap-2 p-5">
+          <div className="w-64 md:w-80 bg-black flex flex-col gap-2 p-4 md:p-8">
             <button className="self-end" onClick={() => setActive(false)}>
               <img
                 className="w-4 cursor-pointer"

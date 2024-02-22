@@ -11,11 +11,11 @@ export default function OverviewCard<T extends { id: number; name: string }>({
     if (name == "Website") {
       return (
         <>
-          <h3>{name}</h3>
+          <h3 className="md:text-lg">{name}</h3>
           <a
             href={info}
             target="_blank"
-            className="text-gray-2 text-sm cursor-pointer overflow-hidden text-ellipsis hover:text-blue-400"
+            className="text-gray-2 text-sm md:text-base cursor-pointer overflow-hidden text-ellipsis hover:text-blue-400"
           >
             {info}
           </a>
@@ -27,8 +27,8 @@ export default function OverviewCard<T extends { id: number; name: string }>({
     else {
       return (
         <>
-          <h3>{name}</h3>
-          <span className="text-gray-2 text-sm">{info}</span>
+          <h3 className="md:text-lg">{name}</h3>
+          <span className="text-gray-2 text-sm md:text-base">{info}</span>
         </>
       );
     }
@@ -37,8 +37,8 @@ export default function OverviewCard<T extends { id: number; name: string }>({
   // Array cards.
   return (
     <>
-      <h3>{name}</h3>
-      <ul className="text-gray-2 text-sm">
+      <h3 className="md:text-lg">{name}</h3>
+      <ul className="text-gray-2 text-sm md:text-base">
         {info.map((e) => {
           return (
             <li key={e.id}>
