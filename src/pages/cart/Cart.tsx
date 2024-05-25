@@ -50,7 +50,7 @@ export default function Cart() {
               </p>
               <Link
                 to="checkout"
-                className="self-end border rounded-xl px-2.5 py-1 text-base"
+                className="self-end border rounded-xl px-2.5 py-1 text-base hover:bg-white hover:text-black"
                 onClick={(e) => {
                   if (items.length == 0) {
                     e.preventDefault();

@@ -45,7 +45,7 @@ export default function Filter({
   return (
     <Link
       to={slug === "" ? "" : `?type=${slug}`}
-      className="text-sm md:text-xl text-gray-2"
+      className="text-sm md:text-xl text-gray-2 hover:text-white"
       onClick={handleFilter}
     >
       {title}

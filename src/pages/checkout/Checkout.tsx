@@ -11,7 +11,10 @@ export default function Checkout() {
         </p>
       </div>
 
-      <Link to="/products" className="text-sm border rounded-2xl px-2.5 py-1.5">
+      <Link
+        to="/products"
+        className="text-sm border rounded-2xl px-2.5 py-1.5 hover:bg-white hover:text-black"
+      >
         Browse More
       </Link>
     </div>
