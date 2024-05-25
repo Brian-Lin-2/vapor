@@ -3,6 +3,7 @@ import { type GamePreview } from "../../utils/types";
 import { filterPreview } from "../../utils/filters";
 import Products from "./Products";
 import Loading from "../../components/Loading";
+import FilterMenu from "./FilterMenu";
 
 export default function ProductPage() {
   const [games, setGames] = useState<GamePreview[] | null>(null);
@@ -27,11 +28,17 @@ export default function ProductPage() {
   }, []);
 
   if (!games) {
-    return <Loading />;
+    return (
+      <div className="text-white flex mx-3 md:mx-6">
+        <FilterMenu setGames={setGames} setTitle={setTitle} />
+        <Loading />
+      </div>
+    );
   }
 
   return (
-    <div className="text-white">
+    <div className="text-white flex mx-3 md:mx-6">
+      <FilterMenu setGames={setGames} setTitle={setTitle} />
       <Products games={games} title={title} />
     </div>
   );

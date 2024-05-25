@@ -67,11 +67,17 @@ export default function ProductInfo() {
     return date.toLocaleDateString();
   }
 
+  // Edge case for no rating.
+  if (info.rating_top == 0) {
+    info.rating_top = 5;
+  }
+
   return (
     <div className="mx-6 mt-2 md:mx-20">
       <div className="flex justify-between mx-1">
         <Link
           to=".."
+          relative="path"
           className="flex items-center gap-2 w-20 md:w-23 md:gap-3 font-bold text-xl md:text-2xl"
         >
           <img
@@ -147,7 +153,7 @@ export default function ProductInfo() {
           </h2>
 
           <div className="p-3 rounded md:rounded-2xl bg-gray-3 grid grid-cols-2 md:grid-cols-4 gap-y-2 md:p-6 md:gap-y-3">
-            <OverviewCard name="ESRB" info={info.esrb_rating.name} />
+            <OverviewCard name="ESRB" info={info.esrb_rating?.name} />
             <OverviewCard name="Genre" info={info.genres} />
             <OverviewCard name="Developers" info={info.developers} />
             <OverviewCard name="Publishers" info={info.publishers} />

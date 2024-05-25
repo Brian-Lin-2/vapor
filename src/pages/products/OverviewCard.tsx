@@ -39,7 +39,7 @@ export default function OverviewCard<T extends { id: number; name: string }>({
     <>
       <h3 className="md:text-lg">{name}</h3>
       <ul className="text-gray-2 text-sm md:text-base">
-        {info.map((e) => {
+        {info?.map((e) => {
           return (
             <li key={e.id}>
               {/* Ensures first character is capitalized. */}

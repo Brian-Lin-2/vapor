@@ -26,7 +26,7 @@ export default function ImageCarousel({ images }: { images: Screenshot[] }) {
     <div
       className="rounded-2xl h-[60vh] md:h-[65vh] bg-cover w-full flex md:w-1/2"
       style={{
-        backgroundImage: `url('${images[index].image}')`,
+        backgroundImage: `url('${images[index]?.image}')`,
       }}
       aria-label="image of game"
     >

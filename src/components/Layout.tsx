@@ -18,7 +18,7 @@ export default function Layout() {
         <header>
           <Header />
         </header>
-        <main className="flex-grow flex flex-col">
+        <main className="flex flex-col flex-grow">
           <Outlet />
         </main>
       </div>

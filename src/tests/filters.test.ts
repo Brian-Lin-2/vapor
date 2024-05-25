@@ -95,7 +95,7 @@ describe("Filter Functions", () => {
       rating: 0,
       rating_top: 5,
       rating_count: 0,
-      esrb_rating: [],
+      esrb_rating: { id: 0, name: "test_name", slug: "test_slug" },
       ratings: [],
       updated: "test_updated",
       website: "test_website",

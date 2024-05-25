@@ -25,7 +25,7 @@ export const fillerObject = {
   rating_top: 5,
   rating_count: 0,
   ratings: [],
-  esrb_rating: [],
+  esrb_rating: { id: 0, name: "test_name", slug: "test_slug" },
   updated: "test_updated",
   website: "test_website",
   screenshots: [],

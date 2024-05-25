@@ -10,12 +10,12 @@ export default function SideMenu() {
         className="cursor-pointer md:hidden"
         onClick={() => setActive(true)}
       >
-        <img className="w-8" src="/images/icons/menu.png" alt="" />
+        <img className="w-8" src="/images/icons/menu.png" alt="menu" />
       </button>
 
       {active && (
         <div
-          className="fixed min-h-screen z-10 w-full left-0 top-0 flex"
+          className="fixed min-h-screen z-20 w-full left-0 top-0 flex"
           data-testid="side-menu"
         >
           <div

@@ -9,15 +9,15 @@ export default function Products({
   title: string;
 }) {
   return (
-    <>
-      <h1 className="uppercase text-4xl text-center font-bold mt-4 mb-8 md:text-5xl">
+    <div className="w-full mx-6 mb-6">
+      <h1 className="uppercase text-4xl text-center md:text-start font-bold mb-8 md:text-5xl">
         {title}
       </h1>
-      <ul className="text-white mx-6 mb-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <ul className="text-white grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         {games.map((game: GamePreview) => {
           return <ProductCard key={game.id} game={game} />;
         })}
       </ul>
-    </>
+    </div>
   );
 }
