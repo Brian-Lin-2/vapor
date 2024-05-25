@@ -7,7 +7,11 @@ export default function HomePage() {
       </div>
       <footer className="text-center text-gray-2 bg-gray-3 text-sm rounded-xl w-52 mx-auto px-6 py-3 mt-10 mb-6 md:mb-8">
         Made with{" "}
-        <a className="border-b hover:text-white" href="_blank" target="_blank">
+        <a
+          className="border-b hover:text-white"
+          href="https://rawg.io/"
+          target="_blank"
+        >
           RAWG
         </a>
       </footer>
