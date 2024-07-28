@@ -17,7 +17,7 @@ Game Description:
 <img width="800" alt="image" src="https://github.com/user-attachments/assets/64a0f68e-e177-44f6-8220-64cf4d6bcb1d">
 
 Cart:
-<img width="310" alt="image" src="https://github.com/user-attachments/assets/838cc21a-bfb7-4163-819b-79a6e5f0a07b">
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/326e9e52-a9d5-42b9-941d-0f20e20ea55b">
 
 ## Features
 
