@@ -1,8 +1,17 @@
-# React + Vite
+# Vapor
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vapor is a ecommerce website where users can browse and purchase games.
 
-Currently, two official plugins are available:
+## Screenshots
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+
+- Displays a catalog of games from the RAWG.io gaming library.
+- A filter system allows for the filtering of games based on various queries.
+- Users can click on any game to view more information.
+  - Has images, ratings, descriptions, and more.
+- Games can be added to a cart and then purchased (fake purchase of course!)
+
+## Motivation
+
+This project was mainly built to help me practice frontend development with the use of an external API. I wanted to experience the development process of an ecommerce website.
