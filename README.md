@@ -1,8 +1,23 @@
 # Vapor
 
-Vapor is a ecommerce website where users can browse and purchase games.
+Vapor is a fake ecommerce website where users can browse and purchase games.
 
 ## Screenshots
+
+Home Page:
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/cd172920-417c-40f7-b1e1-e8868aacf1a4">
+
+Products Page:
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/f17b8691-90a3-4e67-8131-4a0ef5ed3121">
+
+Filters (Active):
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/5c9ec34f-9278-4b6a-97d1-5127152135d5">
+
+Game Description:
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/64a0f68e-e177-44f6-8220-64cf4d6bcb1d">
+
+Cart:
+<img width="310" alt="image" src="https://github.com/user-attachments/assets/838cc21a-bfb7-4163-819b-79a6e5f0a07b">
 
 ## Features
 
